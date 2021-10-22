@@ -21,12 +21,14 @@ export const PlanetButton = styled.button<PlanetButtonProps>`
   padding: 12px 28px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: ${({ color }) => color};
-  width: 350px;
+  width: 100%;
   height: 48px;
   text-align: left;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
+  margin-bottom: 10px;
+  cursor: pointer;
   &::-moz-focus-inner {
     border: 0;
     padding: 0;

@@ -192,12 +192,14 @@ html {
   color: white;
   background: #070724;
   background-image: url("./lib/assets/background-stars.svg");
+  height: 100%;
 }
 body {
   font-family: "Spartan", sans-serif;
   line-height: 25px;
   font-size: 14px;
   font-weight: 400;
+  height: 100%;
 }
 
 h1 {

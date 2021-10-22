@@ -2,9 +2,14 @@ import styled from "styled-components";
 import media from "styled-media-query";
 
 export const Wrapper = styled.section`
-  padding: 0 24px;
   display: block;
-  ${media.greaterThan("small")`
-    background: flex;
-  `}
+
+  ${media.greaterThan("medium")`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    padding: 0;
+    margin: 0 20px;
+`}
 `;

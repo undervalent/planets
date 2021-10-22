@@ -1,8 +1,8 @@
 import styled from "styled-components";
-
+import media from "styled-media-query";
 export const WikiWrapper = styled.section`
   max-width: 140px;
-  margin: 43px auto 27px auto;
+  margin: 10px auto 16px auto;
   display: flex;
   .wiki-source {
     font-size: 12px;
@@ -25,4 +25,10 @@ export const WikiWrapper = styled.section`
   .wikipedia-text {
     margin-right: 5px;
   }
+
+  ${media.greaterThan("medium")`
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 27px
+`}
 `;

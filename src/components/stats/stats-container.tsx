@@ -1,11 +1,11 @@
 import React from "react";
-import { usePlanet } from "../../lib/context";
+import { useRecoilValue } from "recoil";
 import { StatItem } from "./stat-item/";
 import { Wrapper } from "./stats-container.styles";
+import { selectedPlanet } from "../../lib/state";
+
 export const StatsSontainer = () => {
-  const {
-    state: { activePlanet },
-  } = usePlanet();
+  const activePlanet = useRecoilValue(selectedPlanet);
   const { rotation, revolution, radius, temperature } = activePlanet;
   return (
     <Wrapper>

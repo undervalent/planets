@@ -1,26 +1,62 @@
 import React from "react";
-import { usePlanet } from "../../lib/context";
-import { Wiki } from "./wiki";
+import { useRecoilValue } from "recoil";
+import { selectedPlanet, selectedSection } from "../../lib/state";
+import { Wiki } from "./components/wiki";
 import { usePlanetImage } from "../../lib/hooks";
-interface Props {
-  section: "overview" | "structure" | "geology";
-}
+import { PlanetContentWrapper } from "./panel-content.styles";
+import { SectionMenu } from "./components/section-menu";
+interface Props {}
 
-export const PanelContent: React.FC<Props> = ({ section }) => {
-  const {
-    state: { activePlanet },
-  } = usePlanet();
+export const PanelContent: React.FC<Props> = () => {
+  const activePlanet = useRecoilValue(selectedPlanet);
+  const section = useRecoilValue(selectedSection);
 
   const images = usePlanetImage(activePlanet.name);
   const content = activePlanet[section];
-  const image = images && images[section] ? images[section] : null;
+  const setImage = () => {
+    switch (section) {
+      case "geology":
+        return images && images[section] ? (
+          <div className="image-container">
+            <div className="planet-image-wrapper">
+              <img
+                className="planet-image"
+                src={`${images["overview"]}`}
+                alt={activePlanet.name}
+              />
+              <img
+                className="geology-image"
+                src={`${images[section]}`}
+                alt={`${activePlanet.name}-${section}`}
+              />
+            </div>
+          </div>
+        ) : null;
+
+      default:
+        return images && images[section] ? (
+          <div className="image-container">
+            <img
+              className="planet-image"
+              src={`${images[section]}`}
+              alt={activePlanet.name}
+            />
+          </div>
+        ) : null;
+    }
+  };
 
   return (
-    <div>
-      <h1>{activePlanet.name}</h1>
-      {image ? <img src={`${image}`} alt={activePlanet.name} /> : null}
-      <p>{content.content}</p>
-      <Wiki source={content.source} />
-    </div>
+    <PlanetContentWrapper>
+      {setImage()}
+      <div className="planet-content">
+        <div className="planet-information">
+          <h2 className="panel-headline">{activePlanet.name}</h2>
+          <p>{content.content}</p>
+          <Wiki source={content.source} />
+        </div>
+        <SectionMenu />
+      </div>
+    </PlanetContentWrapper>
   );
 };

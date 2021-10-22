@@ -23,3 +23,5 @@ export interface IPlanet {
     geology: string;
   };
 }
+
+export type SubSection = "overview" | "geology" | "structure";

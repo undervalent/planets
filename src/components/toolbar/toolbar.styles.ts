@@ -1,0 +1,121 @@
+import styled from "styled-components";
+import media from "styled-media-query";
+
+export const Wrapper = styled.header`
+  width: 100%;
+  height: 68px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: -5px;
+  .toolbar__navigation {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 0 10px;
+  }
+  .toolbar__logo {
+    margin-left: 10px;
+  }
+  .toolbar__logo h2 {
+    font-family: Antonio;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -1.05px;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  .toolbar__navigation-items {
+    display: none;
+    width: 100%;
+  }
+  .toolbar__logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .toolbar__navigation-items ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  .toolbar__navigation-items li {
+    padding: 0 5px;
+  }
+  .toolbar__navigation-items a {
+    color: white;
+    text-decoration: none;
+  }
+  .toolbar__navigation-items a:hover,
+  .toolbar__navigation-items a:active {
+    color: red;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  ${media.between("medium", "large")`
+    height: 140px;
+    .toolbar__logo {
+    margin-bottom: 9px;
+
+    }
+    .toolbar__navigation {
+      flex-direction: column;
+      width: 100%;
+    }
+    .toolbar__navigation-items {
+      display: block;
+      max-width: 668px;
+    }
+    .spacer {
+      display: none;
+    }
+  `}
+  ${media.greaterThan("large")`
+  .toolbar__navigation-items li {
+    display: flex;
+    align-items: center
+  }
+    .toolbar__navigation-items {
+      display: flex;
+      flex: 1
+    }
+  `}
+`;
+
+export const MenuButton = styled.button<{ color: string }>`
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+  color: white;
+  font-family: "Spartan", sans-serif;
+  font-weight: 700;
+  padding: 12px 10px;
+  border-top: ${({ color }) => `5px solid ${color}`};
+  width: 100%;
+  height: 48px;
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+  ${media.between("medium", "large")`
+  border-top: 4px solid transparent;
+  `}
+`;
