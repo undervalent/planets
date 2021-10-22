@@ -10,24 +10,50 @@ import {
 } from "@reach/tabs";
 
 import { TabWrapper } from "./tabs.styles";
+import { PanelContent } from "../panel-content";
 
 export const Tabs = () => {
   const {
     state: { activePlanet },
   } = usePlanet();
+  const [tabIndex, setTabIndex] = React.useState(0);
 
+  const generateStyle = (tabOption: number) => {
+    const isActive = tabIndex === tabOption;
+    return {
+      borderBottom: `4px solid ${
+        isActive ? activePlanet.color : "transparent"
+      }`,
+      color: `${isActive ? "#fff" : "rgba(255,255,255,.5)"}`,
+    };
+  };
 
+  const handleTabsChange = (index: number) => {
+    setTabIndex(index);
+  };
 
   return (
     <TabWrapper>
-      <TabContainer>
+      <TabContainer
+        index={tabIndex}
+        onChange={handleTabsChange}
+        style={{ width: "100%" }}
+      >
         <TabList>
-          <Tab>Uno</Tab>
-          <Tab>Dos</Tab>
+          <Tab style={generateStyle(0)}>Overview</Tab>
+          <Tab style={generateStyle(1)}>Structure</Tab>
+          <Tab style={generateStyle(2)}>Surface</Tab>
         </TabList>
         <TabPanels>
-          <TabPanel>Uno</TabPanel>
-          <TabPanel>Dos</TabPanel>
+          <TabPanel>
+            <PanelContent section={"overview"} />
+          </TabPanel>
+          <TabPanel>
+            <PanelContent section={"structure"} />
+          </TabPanel>
+          <TabPanel>
+            <PanelContent section={"geology"} />
+          </TabPanel>
         </TabPanels>
       </TabContainer>
     </TabWrapper>

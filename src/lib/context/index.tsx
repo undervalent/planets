@@ -8,16 +8,14 @@ type Action =
       payload: IPlanet;
     }
   | {
-      type: "SET_ACTIVE_TAB";
-      payload: string;
-    }
-  | {
       type: unknown;
       payload: any;
     };
 
 type Dispatch = (action: Action) => void;
-type State = { activePlanet: IPlanet };
+type State = {
+  activePlanet: IPlanet;
+};
 type PlantesProviderProps = { children: React.ReactNode };
 
 const PlanetsContext = React.createContext<
@@ -30,11 +28,6 @@ function planetReducer(state: State, action: Action) {
       return {
         ...state,
         activePlanet: action.payload,
-      };
-    case "SET_ACTIVE_TAB":
-      return {
-        ...state,
-        activeTab: action.payload,
       };
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
