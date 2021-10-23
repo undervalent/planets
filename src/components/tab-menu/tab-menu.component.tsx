@@ -1,9 +1,9 @@
 import React from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { selectedPlanet, selectedSection } from "../../lib/state";
-import { Wrapper, MenuButton } from "./top-menu.styles";
+import { Wrapper, MenuButton } from "./tab-menu.styles";
 
-export const TopMenu = () => {
+export const TabMenu = () => {
   const [currentSection, setCurrentSection] = useRecoilState(selectedSection);
   const { color } = useRecoilValue(selectedPlanet);
 

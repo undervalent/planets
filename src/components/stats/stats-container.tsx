@@ -4,7 +4,7 @@ import { StatItem } from "./stat-item/";
 import { Wrapper } from "./stats-container.styles";
 import { selectedPlanet } from "../../lib/state";
 
-export const StatsSontainer = () => {
+export const StatsContainer = () => {
   const activePlanet = useRecoilValue(selectedPlanet);
   const { rotation, revolution, radius, temperature } = activePlanet;
   return (
@@ -16,5 +16,3 @@ export const StatsSontainer = () => {
     </Wrapper>
   );
 };
-
-export default StatsSontainer;

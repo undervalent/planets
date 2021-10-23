@@ -1,5 +1,6 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
+import { Link } from "react-router-dom";
 import { Wrapper } from "./side-drawer.styles";
 import { MenuButton } from "./components";
 import { allPlanets, drawerToggleState } from "../../lib/state";
@@ -10,7 +11,9 @@ export const SideDrawer: React.FC = () => {
   const isDrawerOpen = useRecoilValue(drawerToggleState);
   const dataButtons = planets.map((planet: IPlanet) => (
     <li key={planet.name}>
-      <MenuButton planet={planet} />
+      <Link to={planet.name} className="link">
+        <MenuButton planet={planet} />
+      </Link>
     </li>
   ));
   return (

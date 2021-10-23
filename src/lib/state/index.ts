@@ -1,15 +1,10 @@
-import { atom } from "recoil";
+import { atom, selector } from "recoil";
 import { IPlanet, SubSection } from "../types";
 import planets from "../data/data.json";
 
 export const drawerToggleState = atom<boolean>({
   key: "DrawerToggle",
   default: false,
-});
-
-export const selectedPlanet = atom<IPlanet>({
-  key: "selectedPlanet",
-  default: planets[0],
 });
 
 export const allPlanets = atom<IPlanet[]>({
@@ -19,4 +14,15 @@ export const allPlanets = atom<IPlanet[]>({
 export const selectedSection = atom<SubSection>({
   key: "selectedSection",
   default: "overview",
+});
+
+export const currentPlanet = atom({ key: "currentPlanet", default: "Mercury" });
+
+export const selectedPlanet = selector<IPlanet>({
+  key: "selectedPlanet",
+  get: ({ get }) => {
+    const planet = get(currentPlanet);
+    const planetsList = get(allPlanets);
+    return planetsList.filter((el) => el.name === planet)[0];
+  },
 });

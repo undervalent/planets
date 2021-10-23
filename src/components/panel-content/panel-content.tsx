@@ -7,12 +7,12 @@ import { PlanetContentWrapper } from "./panel-content.styles";
 import { SectionMenu } from "./components/section-menu";
 interface Props {}
 
-export const PanelContent: React.FC<Props> = () => {
+export const PanelContent: React.FC<Props> = (props) => {
   const activePlanet = useRecoilValue(selectedPlanet);
   const section = useRecoilValue(selectedSection);
-
   const images = usePlanetImage(activePlanet.name);
   const content = activePlanet[section];
+
   const setImage = () => {
     switch (section) {
       case "geology":

@@ -1,28 +1,24 @@
 import React from "react";
-import { useRecoilValue, useRecoilState, useResetRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
+import { Link } from "react-router-dom";
+
 import { Wrapper, MenuButton } from "./toolbar.styles";
 import { ToggleButton } from "./components/toggle-button";
-import { allPlanets, selectedPlanet, selectedSection } from "../../lib/state";
-import { IPlanet } from "../../lib/types";
+import { allPlanets, selectedPlanet } from "../../lib/state";
 
 export const Toolbar: React.FC = () => {
   const planets = useRecoilValue(allPlanets);
-  const [activePlanet, setActivePlanet] = useRecoilState(selectedPlanet);
-  const resetSection = useResetRecoilState(selectedSection);
-
-  const handleClick = (el: IPlanet) => {
-    resetSection();
-    setActivePlanet(el);
-  };
+  const activePlanet = useRecoilValue(selectedPlanet);
 
   const buttons = planets.map((el) => (
-    <li>
-      <MenuButton
-        onClick={() => handleClick(el)}
-        color={activePlanet.name === el.name ? el.color : "transparent"}
-      >
-        {el.name}
-      </MenuButton>
+    <li key={el.name}>
+      <Link to={el.name}>
+        <MenuButton
+          color={activePlanet.name === el.name ? el.color : "transparent"}
+        >
+          {el.name}
+        </MenuButton>
+      </Link>
     </li>
   ));
   return (

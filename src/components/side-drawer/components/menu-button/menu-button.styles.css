@@ -21,6 +21,7 @@
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
+  width: 100%;
 }
 .menu-button::-moz-focus-inner {
   border: 0;

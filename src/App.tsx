@@ -1,15 +1,32 @@
 import React from "react";
-import { useRecoilValue } from "recoil";
-import { StatsSontainer } from "./components/stats";
+import { useRecoilState, useSetRecoilState, useResetRecoilState } from "recoil";
+import { Route, useLocation } from "react-router-dom";
+import { StatsContainer } from "./components/stats";
 import { SideDrawer } from "./components/side-drawer";
 import { Toolbar } from "./components/toolbar";
 import { Backdrop } from "./components/backdrop";
-import { drawerToggleState } from "./lib/state";
-import { TopMenu } from "./components/top-menu";
+import { drawerToggleState, currentPlanet, selectedSection } from "./lib/state";
+import { TabMenu } from "./components/tab-menu";
 import { PanelContent } from "./components/panel-content";
 
 function App() {
-  const sideDrawerOpen = useRecoilValue(drawerToggleState);
+  const [sideDrawerOpen, setDrawerToggle] = useRecoilState(drawerToggleState);
+  const setCurrentPlanet = useSetRecoilState(currentPlanet);
+  const resetSelectedSection = useResetRecoilState(selectedSection);
+
+  const { pathname } = useLocation();
+  const path = pathname.split("/")[1];
+
+  const handlePathUpdate = React.useCallback(() => {
+    setCurrentPlanet(path || "Mercury");
+    resetSelectedSection();
+    setDrawerToggle(false);
+  }, [path, resetSelectedSection, setCurrentPlanet, setDrawerToggle]);
+
+  React.useEffect(() => {
+    handlePathUpdate();
+    return () => {};
+  }, [path, handlePathUpdate]);
 
   const backdrop = sideDrawerOpen ? <Backdrop /> : null;
 
@@ -19,9 +36,9 @@ function App() {
       <SideDrawer />
       {backdrop}
       <main>
-        <TopMenu />
-        <PanelContent />
-        <StatsSontainer />
+        <TabMenu />
+        <Route path="/" component={PanelContent} />
+        <StatsContainer />
       </main>
     </div>
   );

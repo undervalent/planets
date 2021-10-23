@@ -2,6 +2,12 @@ import styled from "styled-components";
 import media from "styled-media-query";
 
 export const Wrapper = styled.div`
+  .link {
+    width: 100%;
+    display: block;
+    height: 100%;
+    text-decoration: none;
+  }
   .side-drawer {
     height: 100%;
     width: 70%;
