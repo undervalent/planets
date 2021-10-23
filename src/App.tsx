@@ -8,6 +8,7 @@ import { Backdrop } from "./components/backdrop";
 import { drawerToggleState, currentPlanet, selectedSection } from "./lib/state";
 import { TabMenu } from "./components/tab-menu";
 import { PanelContent } from "./components/panel-content";
+import { ContentWrapper } from "./App.styles";
 
 function App() {
   const [sideDrawerOpen, setDrawerToggle] = useRecoilState(drawerToggleState);
@@ -37,8 +38,10 @@ function App() {
       {backdrop}
       <main>
         <TabMenu />
-        <Route path="/" component={PanelContent} />
-        <StatsContainer />
+        <ContentWrapper>
+          <Route path="/" component={PanelContent} />
+          <StatsContainer />
+        </ContentWrapper>
       </main>
     </div>
   );
