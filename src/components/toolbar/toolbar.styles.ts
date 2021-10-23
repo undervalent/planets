@@ -11,6 +11,8 @@ export const Wrapper = styled.header`
     height: 100%;
     align-items: center;
     padding: 0 10px;
+    max-width: 1440px;
+    margin: auto;
   }
   .toolbar__logo {
     margin-left: 10px;
@@ -82,6 +84,7 @@ export const Wrapper = styled.header`
   }
     .toolbar__navigation-items {
       display: flex;
+      justify-content: flex-end;
       flex: 1
     }
   `}
