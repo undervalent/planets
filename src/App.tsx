@@ -17,7 +17,7 @@ function App() {
   const resetSelectedSection = useResetRecoilState(selectedSection);
   const { pathname } = useLocation();
   const path = getPath(pathname);
-
+  console.log({ pathname });
   React.useEffect(() => {
     setCurrentPlanet(path || "Mercury");
     resetSelectedSection();
@@ -36,7 +36,7 @@ function App() {
       <main>
         <TabMenu />
         <ContentWrapper>
-          <Route path="/" component={PanelContent} />
+          <Route path="*" component={PanelContent} />
           <StatsContainer />
         </ContentWrapper>
       </main>
