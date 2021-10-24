@@ -18,16 +18,13 @@ function App() {
   const { pathname } = useLocation();
   const path = pathname.split("/")[1];
 
-  const handlePathUpdate = React.useCallback(() => {
+  React.useEffect(() => {
     setCurrentPlanet(path || "Mercury");
     resetSelectedSection();
     setDrawerToggle(false);
-  }, [path, resetSelectedSection, setCurrentPlanet, setDrawerToggle]);
-
-  React.useEffect(() => {
-    handlePathUpdate();
     return () => {};
-  }, [path, handlePathUpdate]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [path]);
 
   const backdrop = sideDrawerOpen ? <Backdrop /> : null;
 
