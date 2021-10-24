@@ -24,7 +24,6 @@ export const selectedPlanet = selector<IPlanet>({
     const planet = get(currentPlanet);
     const planetsList = get(allPlanets);
     const item = planetsList.filter((el) => el.name === planet);
-
     return item.length ? item[0] : planetsList[0];
   },
 });

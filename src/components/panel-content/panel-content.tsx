@@ -5,9 +5,10 @@ import { Wiki } from "./components/wiki";
 import { usePlanetImage } from "../../lib/hooks";
 import { PlanetContentWrapper } from "./panel-content.styles";
 import { SectionMenu } from "./components/section-menu";
+
 interface Props {}
 
-export const PanelContent: React.FC<Props> = (props) => {
+export const PanelContent: React.FC<Props> = () => {
   const activePlanet = useRecoilValue(selectedPlanet);
 
   const section = useRecoilValue(selectedSection);

@@ -9,14 +9,14 @@ import { drawerToggleState, currentPlanet, selectedSection } from "./lib/state";
 import { TabMenu } from "./components/tab-menu";
 import { PanelContent } from "./components/panel-content";
 import { ContentWrapper } from "./App.styles";
+import { getPath } from "./lib/utils";
 
 function App() {
   const [sideDrawerOpen, setDrawerToggle] = useRecoilState(drawerToggleState);
   const setCurrentPlanet = useSetRecoilState(currentPlanet);
   const resetSelectedSection = useResetRecoilState(selectedSection);
-
   const { pathname } = useLocation();
-  const path = pathname.split("/")[1];
+  const path = getPath(pathname);
 
   React.useEffect(() => {
     setCurrentPlanet(path || "Mercury");
