@@ -9,6 +9,7 @@ interface Props {}
 
 export const PanelContent: React.FC<Props> = (props) => {
   const activePlanet = useRecoilValue(selectedPlanet);
+
   const section = useRecoilValue(selectedSection);
   const images = usePlanetImage(activePlanet.name);
   const content = activePlanet[section];
