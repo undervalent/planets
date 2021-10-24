@@ -2,7 +2,7 @@ import React from "react";
 import { useRecoilValue } from "recoil";
 import { Link } from "react-router-dom";
 
-import { Wrapper, MenuButton } from "./toolbar.styles";
+import { Wrapper, MenuItem } from "./toolbar.styles";
 import { ToggleButton } from "./components/toggle-button";
 import { allPlanets, selectedPlanet } from "../../lib/state";
 
@@ -15,11 +15,11 @@ export const Toolbar: React.FC = () => {
   const buttons = planets.map((el) => (
     <li key={el.name}>
       <Link to={el.name}>
-        <MenuButton
+        <MenuItem
           color={activePlanet.name === el.name ? el.color : "transparent"}
         >
           {el.name}
-        </MenuButton>
+        </MenuItem>
       </Link>
     </li>
   ));

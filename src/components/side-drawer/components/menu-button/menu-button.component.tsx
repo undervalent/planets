@@ -11,7 +11,7 @@ interface Props {
 export const MenuButton: React.FC<Props> = ({ planet }) => {
   const iconColor = "rgba(255, 255, 255, 0.5)";
   return (
-    <button className="menu-button">
+    <div className="menu-button">
       <span
         className="menu-button__icon"
         style={{ background: planet.color }}
@@ -19,6 +19,6 @@ export const MenuButton: React.FC<Props> = ({ planet }) => {
       {planet.name}
       <div className="spacer" />
       <FaChevronRight color={iconColor} />
-    </button>
+    </div>
   );
 };

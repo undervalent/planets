@@ -5,7 +5,7 @@ export const Wrapper = styled.header`
   width: 100%;
   height: 68px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin-top: -5px;
+  margin-top: -3px;
   .toolbar__navigation {
     display: flex;
     height: 100%;
@@ -90,34 +90,20 @@ export const Wrapper = styled.header`
   `}
 `;
 
-export const MenuButton = styled.button<{ color: string }>`
-  border: none;
-  margin: 0;
-  padding: 0;
-  width: auto;
-  overflow: visible;
-  background: transparent;
-  line-height: normal;
-  -webkit-font-smoothing: inherit;
-  -moz-osx-font-smoothing: inherit;
-  -webkit-appearance: none;
+export const MenuItem = styled.div<{ color: string }>`
   color: white;
   font-family: "Spartan", sans-serif;
   font-weight: 700;
   padding: 12px 10px;
-  border-top: ${({ color }) => `5px solid ${color}`};
+  border-top: ${({ color }) => `4px solid ${color}`};
   width: 100%;
-  height: 48px;
-  text-align: left;
+  text-align: center;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 10px;
   cursor: pointer;
-  &::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-  }
+
   ${media.between("medium", "large")`
   border-top: 4px solid transparent;
   `}
