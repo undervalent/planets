@@ -10,6 +10,8 @@ export const Toolbar: React.FC = () => {
   const planets = useRecoilValue(allPlanets);
   const activePlanet = useRecoilValue(selectedPlanet);
 
+  if (!activePlanet) return null;
+
   const buttons = planets.map((el) => (
     <li key={el.name}>
       <Link to={el.name}>
