@@ -16,7 +16,7 @@ export const Toolbar: React.FC = () => {
     <li key={el.name}>
       <Link to={el.name}>
         <MenuItem
-          color={activePlanet.name === el.name ? el.color : "transparent"}
+          planetColor={activePlanet.name === el.name ? el.color : "transparent"}
         >
           {el.name}
         </MenuItem>

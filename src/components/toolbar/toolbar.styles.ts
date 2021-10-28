@@ -90,12 +90,12 @@ export const Wrapper = styled.header`
   `}
 `;
 
-export const MenuItem = styled.div`
+export const MenuItem = styled.div<{ planetColor: string }>`
   color: white;
   font-family: "Spartan", sans-serif;
   font-weight: 700;
   padding: 12px 10px;
-  border-top: ${({ color }) => `4px solid ${color}`};
+  border-top: ${({ planetColor }) => `4px solid ${planetColor}`};
   width: 100%;
   text-align: center;
   font-size: 12px;
