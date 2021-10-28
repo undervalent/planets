@@ -17,7 +17,7 @@ export const Wrapper = styled.header`
   .toolbar__logo {
     margin-left: 10px;
   }
-  .toolbar__logo h2 {
+  .toolbar__logo h1 {
     font-family: Antonio;
     font-style: normal;
     font-weight: normal;
@@ -90,7 +90,7 @@ export const Wrapper = styled.header`
   `}
 `;
 
-export const MenuItem = styled.div<{ color: string }>`
+export const MenuItem = styled.div`
   color: white;
   font-family: "Spartan", sans-serif;
   font-weight: 700;

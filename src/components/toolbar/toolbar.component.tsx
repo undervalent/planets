@@ -27,7 +27,7 @@ export const Toolbar: React.FC = () => {
     <Wrapper>
       <nav className="toolbar__navigation">
         <div className="toolbar__logo">
-          <h2>The Planets</h2>
+          <h1>The Planets</h1>
         </div>
         <div className="spacer" />
         <div className="toolbar__navigation-items">
