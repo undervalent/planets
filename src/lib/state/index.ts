@@ -16,7 +16,7 @@ export const selectedSection = atom<SubSection>({
   default: "overview",
 });
 
-export const currentPlanet = atom({ key: "currentPlanet", default: "Mercury" });
+export const currentPlanet = atom({ key: "currentPlanet", default: "Earth" });
 
 export const selectedPlanet = selector<IPlanet>({
   key: "selectedPlanet",
@@ -24,6 +24,6 @@ export const selectedPlanet = selector<IPlanet>({
     const planet = get(currentPlanet);
     const planetsList = get(allPlanets);
     const item = planetsList.filter((el) => el.name === planet);
-    return item.length ? item[0] : planetsList[0];
+    return item.length ? item[0] : planetsList[3];
   },
 });

@@ -19,7 +19,7 @@ function App() {
   const path = getPath(pathname);
   console.log({ pathname });
   React.useEffect(() => {
-    setCurrentPlanet(path || "Mercury");
+    setCurrentPlanet(path || "Earth");
     resetSelectedSection();
     setDrawerToggle(false);
     return () => {};
