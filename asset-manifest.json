@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/planets/static/css/main.f6f8ddb5.chunk.css",
-    "main.js": "/planets/static/js/main.2994d6cd.chunk.js",
-    "main.js.map": "/planets/static/js/main.2994d6cd.chunk.js.map",
+    "main.js": "/planets/static/js/main.b4ede5bb.chunk.js",
+    "main.js.map": "/planets/static/js/main.b4ede5bb.chunk.js.map",
     "runtime-main.js": "/planets/static/js/runtime-main.ff4b9417.js",
     "runtime-main.js.map": "/planets/static/js/runtime-main.ff4b9417.js.map",
     "static/js/2.ab2d6b67.chunk.js": "/planets/static/js/2.ab2d6b67.chunk.js",
@@ -40,6 +40,6 @@
     "static/js/runtime-main.ff4b9417.js",
     "static/js/2.ab2d6b67.chunk.js",
     "static/css/main.f6f8ddb5.chunk.css",
-    "static/js/main.2994d6cd.chunk.js"
+    "static/js/main.b4ede5bb.chunk.js"
   ]
 }
