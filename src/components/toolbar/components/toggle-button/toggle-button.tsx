@@ -10,9 +10,9 @@ export const ToggleButton: React.FC = () => {
 
   return (
     <Wrapper onClick={clickHandler}>
-      <div className="toggle-button__line" />
-      <div className="toggle-button__line" />
-      <div className="toggle-button__line" />
+      <span className="toggle-button__line" />
+      <span className="toggle-button__line" />
+      <span className="toggle-button__line" />
     </Wrapper>
   );
 };

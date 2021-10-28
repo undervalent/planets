@@ -10,24 +10,24 @@ export const TabMenu = () => {
   return (
     <Wrapper>
       <MenuButton
-        color={color}
-        active={currentSection === "overview"}
+        planetColor={color}
+        isActive={currentSection === "overview"}
         className="top-menu__button"
         onClick={() => setCurrentSection("overview")}
       >
         Overview
       </MenuButton>
       <MenuButton
-        color={color}
-        active={currentSection === "structure"}
+        planetColor={color}
+        isActive={currentSection === "structure"}
         className="top-menu__button"
         onClick={() => setCurrentSection("structure")}
       >
         Structure
       </MenuButton>
       <MenuButton
-        color={color}
-        active={currentSection === "geology"}
+        planetColor={color}
+        isActive={currentSection === "geology"}
         className="top-menu__button"
         onClick={() => setCurrentSection("geology")}
       >

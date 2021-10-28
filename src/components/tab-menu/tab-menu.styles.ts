@@ -15,18 +15,18 @@ export const Wrapper = styled.div`
 `;
 
 export const MenuButton = styled.button<{
-  active: boolean;
-  color: string;
+  isActive: boolean;
+  planetColor: string;
 }>`
   display: inline-block;
   border: none;
   padding: 0.25em 0.5em;
   margin: 0;
   border-bottom: 4px solid transparent;
-  border-bottom-color: ${({ active, color }) =>
-    active ? color : "transparent"};
+  border-bottom-color: ${({ isActive, color }) =>
+    isActive ? color : "transparent"};
   background: none;
-  color: ${({ active }) => (active ? "white" : "rgba(255,255,255,.5)")};
+  color: ${({ isActive }) => (isActive ? "white" : "rgba(255,255,255,.5)")};
   font: inherit;
   cursor: pointer;
   -webkit-appearance: none;

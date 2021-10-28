@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface PlanetButtonProps {
-  color: string;
+  planetColor: string;
 }
 
 export const PlanetButton = styled.button<PlanetButtonProps>`
@@ -20,7 +20,7 @@ export const PlanetButton = styled.button<PlanetButtonProps>`
   font-weight: 700;
   padding: 12px 28px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  background: ${({ color }) => color};
+  background: ${({ planetColor }) => planetColor};
   width: 100%;
   height: 48px;
   text-align: left;

@@ -23,7 +23,7 @@ export const Button: React.FC<Props> = ({
   const handleClick = () => clickHandler(section);
 
   return (
-    <PlanetButton color={activeColor} onClick={handleClick}>
+    <PlanetButton planetColor={activeColor} onClick={handleClick}>
       {numberDisplay} {children}
     </PlanetButton>
   );

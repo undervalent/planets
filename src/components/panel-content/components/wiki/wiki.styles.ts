@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import media from "styled-media-query";
-export const WikiWrapper = styled.section`
+export const WikiWrapper = styled.div`
   max-width: 140px;
   margin: 10px auto 16px auto;
   display: flex;
