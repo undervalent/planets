@@ -78,6 +78,8 @@ export const Wrapper = styled.header`
     }
   `}
   ${media.greaterThan("large")`
+  height: 85px;
+  margin-top: 0;
   .toolbar__navigation-items li {
     display: flex;
     align-items: center
@@ -106,5 +108,8 @@ export const MenuItem = styled.div<{ planetColor: string }>`
 
   ${media.between("medium", "large")`
   border-top: 4px solid transparent;
+  `}
+  ${media.greaterThan("large")`
+  padding: 22px 10px;
   `}
 `;
