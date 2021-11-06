@@ -75,8 +75,11 @@ export const PlanetContentWrapper = styled.section`
       min-width: 400px;
       align-items: center;
       justify-content: center;
-      height: 422px;
-    }
 
+    }
+    .planet-image {
+    max-width: initial;
+    max-height: none;
+  }
 `}
 `;

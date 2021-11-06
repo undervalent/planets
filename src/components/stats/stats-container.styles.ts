@@ -12,4 +12,7 @@ export const Wrapper = styled.div`
     padding: 0;
     margin: 0 20px;
 `}
+  ${media.greaterThan("large")`
+  margin-top: 45px;
+`}
 `;
