@@ -21,9 +21,12 @@ export const PlanetContentWrapper = styled.section`
   }
   .geology-image {
     position: absolute;
-    max-width: 163px;
-    top: 50%;
-    left: 32%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 163px;
+    bottom: 0;
   }
   .panel-headline {
     margin: 50px 0 10px 0;
@@ -54,7 +57,7 @@ export const PlanetContentWrapper = styled.section`
 `}
   ${media.greaterThan("large")`
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     .planet-content {
       flex-direction: column;
@@ -68,7 +71,12 @@ export const PlanetContentWrapper = styled.section`
       line-height: 104px;
     }
     .image-container {
+      display: flex;
+      min-width: 400px;
+      align-items: center;
+      justify-content: center;
       height: 422px;
     }
+
 `}
 `;
