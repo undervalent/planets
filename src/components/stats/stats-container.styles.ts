@@ -13,6 +13,6 @@ export const Wrapper = styled.div`
     margin: 0 20px;
 `}
   ${media.greaterThan("large")`
-  margin-top: 45px;
+  margin-top: 20px;
 `}
 `;

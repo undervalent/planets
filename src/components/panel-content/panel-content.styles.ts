@@ -58,6 +58,7 @@ export const PlanetContentWrapper = styled.section`
   ${media.greaterThan("large")`
     flex-direction: row;
     justify-content: space-evenly;
+    margin-top: 68px;
 
     .planet-content {
       flex-direction: column;
@@ -65,16 +66,20 @@ export const PlanetContentWrapper = styled.section`
       max-width: 350px;
       gap: 5px;
       margin-bottom: 87px;
+      margin-left: 88px;
     }
     .panel-headline {
       font-size: 80px;
       line-height: 104px;
+      margin-top: 55px;
     }
     .image-container {
       display: flex;
       min-width: 400px;
       align-items: center;
       justify-content: center;
+      margin-top: -20px;
+      margin-left: 100px;
 
     }
     .planet-image {
